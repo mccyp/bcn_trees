@@ -24,7 +24,7 @@ def render_the_map():
         folium.Marker(
             location=[row['latitud'], row['longitud']],
             popup = row['nom_cientific'] + '\n' + 'Planted on: ' + str(row['data_plantacio']),
-            icon=folium.Icon(color="green", icon='tree')).add_to(bcn)
+            icon=folium.Icon(color="green", icon='fa-tree', prefix='fa')).add_to(bcn)
     
     return bcn._repr_html_()
 
