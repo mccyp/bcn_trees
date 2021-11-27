@@ -1,20 +1,17 @@
-<h1>{% block title %}  {% endblock %}</h1>
-
-    <form method="post">
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" name="title"
-                   placeholder="Post title" class="form-control"
-                   value="{{ request.form['title'] }}"></input>
-        </div>
-
-        <div class="form-group">
-            <label for="content">Content</label>
-            <textarea name="content" placeholder="Post content"
-                      class="form-control">{{ request.form['content'] }}</textarea>
-        </div>
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </form>
-    {% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <meta charset="UTF-8">
+    <title>Trobarbres dels parcs BCN</title>
+</head>
+<body>
+   <h1>Benvinguts al buscador d'arbres dels parcs de BCN!</h1>
+      
+<form action="{{ '/mapa' }}" method="post">
+    <input type="text" name="text">
+    <input type="submit">
+</form>
+    </div>
+</body>
+</html>
