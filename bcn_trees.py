@@ -25,7 +25,27 @@ def render_the_map():
             location=[row['latitud'], row['longitud']],
             popup = row['nom_cientific'] + '\n' + 'Planted on: ' + str(row['data_plantacio']),
             icon=folium.Icon(color="green", icon='fa-tree', prefix='fa')).add_to(bcn)
+    html = """<h1>{% block title %} Create a New Post {% endblock %}</h1>
+
+    <form method="post">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title"
+                   placeholder="Post title" class="form-control"
+                   value="{{ request.form['title'] }}"></input>
+        </div>
+
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea name="content" placeholder="Post content"
+                      class="form-control">{{ request.form['content'] }}</textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    {% endblock %}"""
     
-    return bcn._repr_html_()
+    return html
 
 
