@@ -24,12 +24,12 @@ def render_index():
 @app.route('/mapa', methods=(['POST']))
 def render_the_map():
     content = request.form['text']
-    content = content.lower()
+    content = content.lower() 
     if not content:
         flash('''Has d'entrar un titol!''')
     else:
         trees = pd.read_csv('arbres_bcn.csv')
-        trees2 = trees.loc[trees['nom_cientific'].str.contains(content)]
+        trees2 = trees.loc[trees['nom_cientific'].str.lower().str.contains(content)]
         bcn = folium.Map(location = [41.390205, 2.154007], zoom_start = 13)
         for index, row in trees2.iterrows():
             folium.Marker(
