@@ -10,7 +10,7 @@ import folium
 
 app = Flask(__name__)
 
-gc = pygsheets.authorize(client_secret='/home/k4y4k/credentials/code_secret.json')
+gc = pygsheets.authorize(client_secret='/credentials/code_secret.json')
 
 @app.route('/')
 def render_index():
