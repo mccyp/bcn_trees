@@ -21,9 +21,6 @@ def render_index():
 @app.route('/mapa', methods=(['POST']))
 def render_the_map():
     content = request.form.get('content',type=int)
-    @app.route('/mapa', methods=(['POST']))
-def render_the_map():
-    content = request.form.get('content',type=int)
     print(content)
     # if not content:
     #     flash('''Merci de saisir un nombre correspondant à un item !''')
